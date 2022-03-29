@@ -1,0 +1,21 @@
+{
+    "name": "group-08/squaddonsite",
+    "description": "A chat app for gamers",
+    "type": "project",
+    "authors": [
+        {
+            "name": "benduckwdesign",
+            "email": "benjamin@benjaminduckworth.com"
+        }
+    ],
+    "require": {
+        "nette/forms": "^3.1",
+        "latte/latte": "^2.11",
+        "nette/php-generator": "^3.6"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.28"
+        }
+    }
+}

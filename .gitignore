@@ -1,0 +1,4 @@
+vendor
+playground
+cache/**
+!cache/.gitkeep
