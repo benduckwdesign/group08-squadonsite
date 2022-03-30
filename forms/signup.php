@@ -9,8 +9,7 @@ $form->addSubmit('send', 'Sign Up');
 $form->setAction('index.php');
 
 foreach ($form->getControls() as $control) {
-    $type = $control->getOption('type');
-    $control->setOption('class', 'form-' . $control->getControlPrototype()->type);
+	$control->setOption('class', 'form-'.$control->getOption('type'));
 }
 
 $renderer = $form->getRenderer();
