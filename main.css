@@ -43,6 +43,10 @@ input {
     border: none;
     font-size-adjust: 0.7;
 }
+form {
+    display: block;
+    width: 100%;
+}
 form table {
     margin-left: auto;
     margin-right: auto;
@@ -70,6 +74,12 @@ header {
 }
 main {
     grid-area: main;
+}
+.form-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 .app-wrapper.dark footer {
     background-color: rgba(0, 0, 0, 0.2);
