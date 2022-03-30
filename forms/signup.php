@@ -8,8 +8,8 @@ $form->addPassword('password', 'Password');
 $form->addSubmit('send', 'Sign Up');
 $form->setAction('index.php');
 
-foreach ($form->getControls() as $control) {
-	$control->setOption('class', 'form-'.$control->getOption('type'));
+foreach ($form->getPairs() as $pair) {
+	$pair->setOption('class', 'form-'.$pair->getOption('type'));
 }
 
 $renderer = $form->getRenderer();
