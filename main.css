@@ -79,10 +79,12 @@ main {
 }
 .form-msg {
     margin-bottom: 12px;
+    text-align: center;
 }
 .debug-msg {
     font-size-adjust: 0.3;
     opacity: 0.5;
+    text-align: center;
 }
 .form-wrapper {
     width: 100%;
