@@ -49,12 +49,14 @@ input {
 }
 fieldset {
     border: rgba(255,255,255,0.2) 3px solid;
+    margin:0;
+    padding:12px;
 }
 legend {
     font-weight: bold;
 }
 form {
-    width: 50%;
+    width: 100%;
 }
 form table {
     margin-left: auto;
@@ -69,7 +71,8 @@ input[class="text"] {
     color: var(--black);
     border-radius: 10px;
     margin-bottom: 12px;
-    width:auto;
+    width:100%;
+    box-sizing:border-box;
 }
 input[class="button"] {
     background-color: var(--blue);
