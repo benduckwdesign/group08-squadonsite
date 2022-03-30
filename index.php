@@ -4,12 +4,12 @@ require_once 'vendor/autoload.php';
 
 $latte = new Latte\Engine;
 
-$latte->setTempDirectory('cache/');
+// $latte->setTempDirectory('cache/');
 
 include 'forms/signup.php';
 
 $params = [
-	'hello' => __DIR__,
+	'hello' => 'This is a test to make sure dependencies are working.',
 	'form' => $form,
 ];
 
