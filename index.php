@@ -6,17 +6,24 @@ $latte = new Latte\Engine;
 
 // $latte->setTempDirectory('cache/');
 
-include 'forms/signup.php';
-include 'config.php';
+require_once 'forms/signup.php';
+require_once 'config.php';
+require_once 'db/db.php';
 
 $form_msg = "";
 $form_result = "";
 if ($form->isSuccess()) {
-	$form_msg = 'The form has been filled in and submitted correctly.';
 	$data = $form->getValues();
-	// $data->name contains name
-	// $data->password contains password
-	$form_result = var_export($data, true);
+	$user_exists = $user_db->has($data->username);
+	if ($user_exists == False) {
+		$user = $user_db->get($data->username);
+		$user->password->set($password);
+		$form_msg = 'You have successfully been registered.';
+		$form_result = var_export($data, true); //debug only
+	} else {
+		$form['username']->addError('That username is already taken.');
+	}
+	
 }
 
 $params = [

@@ -3,8 +3,16 @@
 use Nette\Forms\Form;
 $form = new Form;
 $form->addGroup('Registration');
-$form->addText('username', 'Username');
-$form->addPassword('password', 'Password');
+$form->addText('username', 'Username')
+    ->addFilter(function ($value) {
+        return str_replace(' ', '', $value); // remove spaces from the username
+    })
+    ->addRule($form::PATTERN, 'Username must contain letters and numbers only.', '[a-zA-Z0-9]+')
+    ->addRule($form::RANGE, 'Username must be at least %d and no more than %d characters.', [2, 32])
+    ->setRequired('Please fill in a username.');
+$form->addPassword('password', 'Password')
+    ->setRequired('Please set a password.')
+    ->addRule($form::MIN_LENGTH, 'Password must be at least %d characters', 8);
 $form->addSubmit('send', 'Sign Up');
 $form->setAction('index.php');
 
