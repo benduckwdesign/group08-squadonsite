@@ -1,0 +1,15 @@
+{layout 'html.latte'}
+
+{block main}
+    <div n:if="$form" class="form-wrapper">
+        {$form->render()}
+    </div>
+    <ul n:if="$chat_messages">
+        {foreach $chat_messages as $message}
+            <li id="item-{$iterator->counter}">
+                <h6>{$item??->username??}</h6>
+                <p>{$item??->message??}</p>
+            </li>
+        {/foreach}
+    </ul>
+{/block}

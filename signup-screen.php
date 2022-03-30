@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 $latte = new Latte\Engine;
 
-// $latte->setTempDirectory('cache/');
+$latte->setTempDirectory('cache/');
 
 require_once 'forms/signup.php';
 require_once 'config.php';
@@ -34,6 +34,6 @@ $params = [
 	'form_msg' => $form_msg,
 ];
 
-$latte->render('templates/signup.latte', $params);
+$latte->render('templates/signup-screen.latte', $params);
 
 ?>
