@@ -99,6 +99,8 @@ header {
 }
 main {
     grid-area: main;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .form-msg {
     margin-bottom: 12px;
