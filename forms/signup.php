@@ -11,7 +11,7 @@ $form->setAction('index.php');
 $renderer = $form->getRenderer();
 $renderer->wrappers['controls']['container'] = 'div';
 $renderer->wrappers['pair']['container'] = 'div';
-$renderer->wrappers['pair']['class'] = 'form-pair';
+$renderer->wrappers['pair']->setOption('class','form-pair');
 $renderer->wrappers['label']['container'] = 'div';
 $renderer->wrappers['control']['container'] = 'div';
 

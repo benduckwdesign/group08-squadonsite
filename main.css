@@ -35,18 +35,19 @@ body {
     color: var(--white);
 }
 label {
-    text-align: right;
+    text-align: left;
     display: block;
+    font-size-adjust: 0.5;
 }
 input {
     padding: 10px 10px 10px 10px;
     border: none;
     font-size-adjust: 0.7;
 }
-form {
+/* form {
     display: block;
     width: 100%;
-}
+} */
 form table {
     margin-left: auto;
     margin-right: auto;
@@ -59,6 +60,7 @@ input[class="text"] {
     background-color: var(--tan);
     color: var(--black);
     border-radius: 10px;
+    margin-bottom: 12px;
 }
 input[class="button"] {
     background-color: var(--blue);
