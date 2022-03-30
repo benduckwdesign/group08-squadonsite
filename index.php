@@ -13,7 +13,7 @@ $params = [
 	'form' => $form,
 ];
 
-$latte->render('templates/test.txt', $params);
+$latte->render('templates/test.latte', $params);
 
 if ($form->isSuccess()) {
 	echo 'The form has been filled in and submitted correctly';
