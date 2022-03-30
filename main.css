@@ -76,10 +76,11 @@ main {
     grid-area: main;
 }
 .form-msg {
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 }
 .debug-msg {
-    font-size-adjust: 0.4;
+    font-size-adjust: 0.3;
+    opacity: 0.5;
 }
 .form-wrapper {
     width: 100%;
@@ -102,6 +103,9 @@ p {
 }
 h1 {
     text-align: center;
+    font-size-adjust: 0.3;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 p,h1,h2,h3,h4,h5,h6 {
     margin: 0;
