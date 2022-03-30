@@ -44,6 +44,12 @@ input {
     border: none;
     font-size-adjust: 0.7;
 }
+fieldset {
+    border: rgba(255,255,255,0.2) 3px solid;
+}
+legend {
+    font-weight: bold;
+}
 /* form {
     display: block;
     width: 100%;
@@ -66,6 +72,7 @@ input[class="button"] {
     background-color: var(--blue);
     color: var(--black);
     border-radius: 999px;
+    font-weight: bold;
 }
 header {
     grid-area: header;
