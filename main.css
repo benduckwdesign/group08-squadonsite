@@ -112,6 +112,8 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left:12px;
+    margin-right:12px;
 }
 .app-wrapper.dark footer {
     background-color: rgba(0, 0, 0, 0.2);
