@@ -5,7 +5,7 @@ $form = new Form;
 $form->addGroup('Registration');
 $form->addText('username', 'Username');
 $form->addPassword('password', 'Password');
-$form->addSubmit('send', 'Sign Up');
+$form->addSubmit('send', 'Sign Up')->setOption('class', 'form-buttons');
 $form->setAction('index.php');
 
 $renderer = $form->getRenderer();
