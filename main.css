@@ -43,6 +43,9 @@ input {
     padding: 10px 10px 10px 10px;
     border: none;
     font-size-adjust: 0.7;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 fieldset {
     border: rgba(255,255,255,0.2) 3px solid;
