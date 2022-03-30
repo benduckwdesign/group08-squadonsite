@@ -30,18 +30,47 @@ body {
         "main"
         "footer";
 }
+.app-wrapper.dark {
+    background-color: var(--black);
+    color: var(--white);
+}
+label {
+    margin-right: 0;
+    margin-left: auto;
+}
+input {
+    padding: 15px 15px 15px 15px;
+}
+.app-wrapper.dark input[class="text"] {
+    background-color: var(--dark-tan);
+    color: var(--black);
+}
+input[class="text"] {
+    background-color: var(--tan);
+    color: var(--black);
+    border-radius: 10px;
+}
+input[class="button"] {
+    background-color: var(--blue);
+    color: var(--black);
+    border-radius: 999px;
+}
 header {
     grid-area: header;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.app-wrapper.dark header {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 main {
     grid-area: main;
 }
+.app-wrapper.dark footer {
+    background-color: rgba(0, 0, 0, 0.2);
+}
 footer {
     grid-area: footer;
-}
-.app-wrapper.dark {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 p {
     font-family: 'Nunito', sans-serif;
