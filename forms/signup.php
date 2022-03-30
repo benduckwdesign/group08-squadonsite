@@ -8,11 +8,12 @@ $form->addText('username', 'Username')
         return str_replace(' ', '', $value); // remove spaces from the username
     })
     ->addRule($form::PATTERN, 'Username must contain letters and numbers only.', '[a-zA-Z0-9]+')
-    ->addRule($form::RANGE, 'Username must be at least %d and no more than %d characters.', [2, 32])
+    ->addRule($form::MIN_LENGTH, 'Username must be at least %d characters.', 2)
+    ->addRule($form::MAX_LENGTH, 'Username must be at less than %d characters.', 32)
     ->setRequired('Please fill in a username.');
 $form->addPassword('password', 'Password')
     ->setRequired('Please set a password.')
-    ->addRule($form::MIN_LENGTH, 'Password must be at least %d characters', 8);
+    ->addRule($form::MIN_LENGTH, 'Password must be at least %d characters.', 8);
 $form->addSubmit('send', 'Sign Up');
 $form->setAction('index.php');
 
