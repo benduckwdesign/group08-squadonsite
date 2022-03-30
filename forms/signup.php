@@ -5,8 +5,13 @@ $form = new Form;
 $form->addGroup('Registration');
 $form->addText('username', 'Username');
 $form->addPassword('password', 'Password');
-$form->addSubmit('send', 'Sign Up')->setOption('class', 'form-buttons');
+$form->addSubmit('send', 'Sign Up');
 $form->setAction('index.php');
+
+foreach ($form->getControls() as $control) {
+    $type = $control->getOption('type');
+    $control->setOption('class', 'form-' . $control->getControlPrototype()->type);
+}
 
 $renderer = $form->getRenderer();
 $renderer->wrappers['controls']['container'] = 'div';
