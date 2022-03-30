@@ -1,0 +1,15 @@
+{layout 'html.latte'}
+
+{block header}
+    <h1>Sign Up</h1>
+{/block}
+
+{block main}
+    {$form_msg}
+    {$form->render()}
+    {$form_result}
+{/block}
+
+{block footer}
+    <p>(App navigation tabs will go here, probably.)</p>
+{/block}

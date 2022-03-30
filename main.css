@@ -1,0 +1,48 @@
+:root {
+    --blue: #AEC6C1;
+    --black: #3C3C3C;
+    --white: #FFFFFF;
+    --tan: #DCDAC7;
+    --dark-tan: #C8C6B5;
+    --red: #D0725D;
+}
+html {
+    background-color: var(--blue); /* sets scrollbar color in firefox */
+    margin: 0;
+    padding: 0;
+    font-size: calc(16px + 0.5vw);
+    font-family: 'Nunito', sans-serif;
+}
+.app-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--tan);
+    color: var(--black);
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}
+.app-wrapper.dark {
+    background-color: var(--black);
+    color: var(--white);
+}
+p {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.4;
+}
+h1 {
+    text-align: center;
+}
