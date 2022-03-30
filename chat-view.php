@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 $latte = new Latte\Engine;
 
-$latte->setTempDirectory('cache/');
+// $latte->setTempDirectory('cache/');
 
 require_once 'forms/chat-view.php';
 require_once 'config.php';
@@ -12,8 +12,6 @@ require_once 'db/db.php';
 
 $params = [
 	'siteroot' => $siteroot,
-	'form' => $form,
-	'form_msg' => $form_msg,
 ];
 
 $form_msg = "";
@@ -32,6 +30,8 @@ if ($form->isSuccess()) {
 	}
 	
 }
+$params['form_msg'] = $form_msg;
+$params['form'] = $form;
 
 $latte->render('templates/chat-view.latte', $params);
 

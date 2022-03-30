@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 $latte = new Latte\Engine;
 
-$latte->setTempDirectory('cache/');
+// $latte->setTempDirectory('cache/');
 
 require_once 'forms/signup.php';
 require_once 'config.php';
