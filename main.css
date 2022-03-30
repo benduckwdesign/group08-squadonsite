@@ -104,8 +104,8 @@ p {
 h1 {
     text-align: center;
     font-size-adjust: 0.3;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 p,h1,h2,h3,h4,h5,h6 {
     margin: 0;
