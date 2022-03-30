@@ -83,8 +83,10 @@ input[class="button"] {
     font-weight: bold;
     padding-left: 25px;
     padding-right: 25px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    box-sizing:border-box;
 }
 header {
     grid-area: header;

@@ -13,8 +13,8 @@ foreach ($form->getControls() as $control) {
 }
 
 $renderer = $form->getRenderer();
-$renderer->wrappers['controls']['container'] = 'div';
-$renderer->wrappers['pair']['container'] = '';
+$renderer->wrappers['controls']['container'] = '';
+$renderer->wrappers['pair']['container'] = 'div';
 // $renderer->wrappers['pair']->setOption('class','form-pair');
 $renderer->wrappers['label']['container'] = '';
 $renderer->wrappers['control']['container'] = '';
