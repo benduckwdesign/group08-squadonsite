@@ -17,7 +17,8 @@ if ($form->isSuccess()) {
 	$user_exists = $user_db->has($data->username);
 	if ($user_exists == False) {
 		$user = $user_db->get($data->username);
-		$user->password->set($password);
+		$user->password = $password;
+		$user->save();
 		$form_msg = 'You have successfully been registered.';
 		$form_result = var_export($data, true); //debug only
 	} else {
