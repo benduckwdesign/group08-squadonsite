@@ -12,11 +12,11 @@ include 'config.php';
 $form_msg = "";
 $form_result = "";
 if ($form->isSuccess()) {
-	$form_msg = 'The form has been filled in and submitted correctly';
+	$form_msg = 'The form has been filled in and submitted correctly.';
 	$data = $form->getValues();
 	// $data->name contains name
 	// $data->password contains password
-	$form_result = var_dump($data);
+	$form_result = var_export($data, true);
 }
 
 $params = [
