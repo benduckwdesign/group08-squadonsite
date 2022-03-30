@@ -20,7 +20,7 @@ if ($form->isSuccess()) {
 		$user->password = $data->password;
 		$user->save();
 		$form_msg = 'You have successfully been registered.';
-		$form_result = var_export($data, true); //debug only
+		// $form_result = var_export($data, true); //debug only
 	} else {
 		$form['username']->addError('That username is already taken.');
 	}
