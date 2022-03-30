@@ -6,9 +6,9 @@
 
 {block main}
     <div class="form-wrapper">
-        {$form_msg}
+        <p class="form-msg">{$form_msg}</p>
         {$form->render()}
-        {$form_result}
+        <p class="debug-msg">{$form_result}</p>
     <div>
 {/block}
 
