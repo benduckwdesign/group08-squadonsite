@@ -11,7 +11,7 @@ $latte->setTempDirectory(__DIR__.$subfolder.'/cache/');
 include __DIR__.'/forms/signup.php';
 
 $params = [
-	'hello' => __DIR__,
+	'hello' => 'This is a test to make sure dependencies are working.',
 	'form' => $form,
 ];
 
