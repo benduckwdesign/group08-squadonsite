@@ -8,8 +8,8 @@
     </div>
     <ul n:if="$chat_messages">
         <li n:foreach="$chat_messages as $item">
-            <h6>{$item??->username}</h6>
-            <p>{$item??->message}</p>
+            <h6>{$item->username}</h6>
+            <p>{$item->message}</p>
         </li>
     </ul>
 {/block}
