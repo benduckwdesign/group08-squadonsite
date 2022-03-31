@@ -9,8 +9,8 @@
     <ul n:if="!empty($chat_messages)">
     {foreach $chat_messages as $item}
         <li>
-            <h6>{$item->username}</h6>
-            <p>{$item->message}</p>
+            <h6>{$item['username']}</h6>
+            <p>{$item['message']}</p>
         </li>
     {/foreach}
     </ul>
