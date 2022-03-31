@@ -9,7 +9,7 @@
     <p n:if="!empty($chat_messages)">
         {toString($chat_messages)}
     </p>
-    <ul n:if="!empty($chat_messages)" n:foreach="$chat_messages?? as $item">
+    <ul n:if="!empty($chat_messages)" n:foreach="$chat_messages? as $item">
         <li>
             <h6>{$item['username']}</h6>
             <p>{$item['message']}</p>
