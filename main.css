@@ -177,3 +177,6 @@ li {
 li h6 {
     font-weight:bold;
 }
+iframe {
+    border: none;
+}
