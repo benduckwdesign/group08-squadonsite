@@ -32,9 +32,11 @@ $chat_messages = null;
 if ($form->isSuccess()) {
     global $params;
     global $form;
+    global $chat_db;
 	$data = $form->getValues();
 	$chat_exists = $chat_db->has($data->id);
 	if ($chat_exists == True) {
+        global $chat_db;
         global $params;
         global $form;
         // Load chat if it exists
