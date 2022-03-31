@@ -18,7 +18,7 @@ $form_msg = "";
 $form_result = "";
 $chat_messages = null;
 $params['form_msg'] = $form_msg;
-if (isset($_SESSION['chat_id']) == False) {
+if (isset($_SESSION['chat_id']) == True) {
     if ($form->isSuccess()) {
         global $params;
         global $form;
