@@ -38,6 +38,7 @@ if ($form->isSuccess()) {
 	if ($chat_exists == True) {
         global $chat_db;
         global $params;
+        global $data;
         global $form;
         // Load chat if it exists
 		$form = null;
