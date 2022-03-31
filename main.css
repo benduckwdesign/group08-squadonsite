@@ -119,11 +119,6 @@ span.error {
     color: var(--red);
     font-size: 18px;
 }
-iframe {
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-}
 .form-wrapper {
     width: 100%;
     height: 100%;
@@ -180,4 +175,6 @@ li h6 {
 iframe {
     border: none;
     margin:0;
+    background-color: transparent;
+    width: 100%;
 }
