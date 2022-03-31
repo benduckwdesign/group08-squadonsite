@@ -42,7 +42,7 @@ if ($form->isSuccess()) {
         global $form;
         // Load chat if it exists
 		$form = null;
-        $params['chat_messages'] = $chat_db->get($data->id)->messages;
+        $params['chat_messages'] = $chat_db->get($data->id)->field('messages');
 	} else {
         global $form;
         // Create new chat if it doesn't?
