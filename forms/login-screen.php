@@ -15,7 +15,7 @@ $form->addPassword('password', 'Password')
     ->setRequired('Please enter your password.')
     ->addRule($form::MIN_LENGTH, 'Password must be at least %d characters.', 8);
 $form->addSubmit('send', 'Log In');
-$form->setAction('signup-screen.php');
+$form->setAction('login-screen.php');
 
 foreach ($form->getControls() as $control) {
 	$control->setOption('class', 'form-'.$control->getOption('type'));
