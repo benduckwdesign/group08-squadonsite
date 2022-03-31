@@ -30,13 +30,18 @@ $form_msg = "";
 $form_result = "";
 $chat_messages = null;
 if ($form->isSuccess()) {
+    global $params;
+    global $form;
 	$data = $form->getValues();
 	$chat_exists = $chat_db->has($data->id);
 	if ($chat_exists == True) {
+        global $params;
+        global $form;
         // Load chat if it exists
 		$form = null;
         $params['chat_messages'] = $chat_db->get($data->id)->messages;
 	} else {
+        global $form;
         // Create new chat if it doesn't?
 		$form['id']->addError('That conversation does not exist.');
 	}
