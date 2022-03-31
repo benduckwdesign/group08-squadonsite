@@ -3,7 +3,7 @@
 {block header}{/block}
 
 {block main}
-    <div n:if="$form" class="form-wrapper">
+    <div n:if="$form" class="form-wrapper-condensed">
         {$form??->render()}
     </div>
     <ul n:if="!empty($chat_messages)">

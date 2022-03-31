@@ -5,9 +5,9 @@
 {/block}
 
 {block main}
-    <iframe src="{$siteroot}/chat-view.php" title="Chat View" allowtransparency="true"></iframe>
+    <iframe src="{$siteroot}/chat-view.php?id={$chat_id}&submit=True" title="Chat View" allowtransparency="true"></iframe>
 {/block}
 
 {block footer}
-    <iframe src="" title="Send Message View" allowtransparency="true"></iframe>
+    <iframe src="{$siteroot}/send-view.php?id={$chat_id}&submit=True" title="Send Message View" allowtransparency="true"></iframe>
 {/block}

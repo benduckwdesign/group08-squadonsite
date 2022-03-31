@@ -14,14 +14,6 @@ $params = [
 	'siteroot' => $ROOTURL
 ];
 
-$test_message = new stdClass;
-$test_message->username = "Kirby";
-$test_message->message = "poyo poyopoyo poyo~";
-
-$test_chat = $chat_db->get('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-$test_chat->messages = array();
-$test_chat->save();
-
 $form_msg = "";
 $form_result = "";
 $chat_messages = null;

@@ -131,6 +131,13 @@ iframe {
     flex-direction: column;
     align-items: center;
 }
+.form-wrapper-condensed {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .form-wrapper::after {
     margin: auto;
     content: '';
