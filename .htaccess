@@ -1,2 +1,1 @@
 php_flag display_errors 1
-php_value include_path ".:/home/students/be322473/dig4172c/new/:/var/www/html/squadonsite/"
