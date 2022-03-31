@@ -1,5 +1,7 @@
 <?php
 
+ini_set('include_path', dirname(__FILE__));
+
 $ROOTDIR = null;
 $ROOTURL = null;
 
