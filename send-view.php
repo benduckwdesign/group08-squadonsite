@@ -28,19 +28,20 @@ if ($form->isSuccess()) {
         global $params;
         global $data;
         global $form;
-        // Load chat if it exists
-		$form = null;
-        $chat_messages = $chat_db->get($data->id)->messages;
+        
 	} else {
         global $form;
         // Create new chat if it doesn't?
-		$form['id']->addError('That conversation does not exist.');
+		$form['message']->addError('That conversation does not exist.');
 	}
 	
 }
 $params['form_msg'] = $form_msg;
-$params['form'] = $form;
-$params['chat_messages'] = $chat_messages;
+if (isset($_SESSION['chat_id']) == False) {
+    $form['message']->addError('That conversation does not exist.');
+} else {
+    $params['form'] = $form;
+}
 
 $latte->render('templates/chat-view.latte', $params);
 

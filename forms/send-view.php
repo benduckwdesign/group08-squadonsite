@@ -10,7 +10,6 @@ $form->addText('message', 'Message')
     ->setRequired('Please write a message.');
 $form->addSubmit('send', 'Send');
 $form->setAction('send-view.php');
-$form->setMethod('GET');
 
 foreach ($form->getControls() as $control) {
 	$control->setOption('class', 'form-'.$control->getOption('type'));

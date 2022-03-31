@@ -14,7 +14,6 @@ $form->addText('id', 'Chat ID')
     ->setRequired('Please fill in a chat ID.');
 $form->addSubmit('send', 'Submit');
 $form->setAction('chat-view.php');
-$form->setMethod('GET');
 
 foreach ($form->getControls() as $control) {
 	$control->setOption('class', 'form-'.$control->getOption('type'));
