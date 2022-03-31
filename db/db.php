@@ -1,6 +1,6 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once '/vendor/autoload.php';
 
 $user_db = new \Filebase\Database([
     'dir' => 'db/user_db'
