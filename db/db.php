@@ -6,4 +6,8 @@ $user_db = new \Filebase\Database([
     'dir' => 'db/user_db'
 ]);
 
+$chat_db = new \Filebase\Database([
+    'dir' => 'db/chat_db'
+]);
+
 ?>
