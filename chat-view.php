@@ -20,7 +20,7 @@ $test_message->message = "poyo poyopoyo poyo~";
 
 $test_chat = $chat_db->get('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 $test_chat->messages = [
-    $test_message
+    0 => $test_message
 ];
 
 $test_chat->save();
