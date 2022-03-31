@@ -6,7 +6,7 @@
     <div n:if="$form" class="form-wrapper">
         {$form??->render()}
     </div>
-    <ul n:if="$chat_messages">
+    <ul n:if="!empty($chat_messages)">
         {foreach $chat_messages as $item}
             <li>
                 <h6>{$item['username']}</h6>
