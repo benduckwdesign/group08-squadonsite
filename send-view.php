@@ -58,8 +58,8 @@ if (isset($_SESSION['chat_id']) == True) {
         }
         
     }
-    $params['form'] = $form;
 }
+$params['form'] = $form;
 
 $latte->render('templates/chat-view.latte', $params);
 
