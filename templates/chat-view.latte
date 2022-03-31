@@ -1,5 +1,7 @@
 {layout 'html.latte'}
 
+{block header}{/block}
+
 {block main}
     <div n:if="$form" class="form-wrapper">
         {$form??->render()}
@@ -11,3 +13,5 @@
         </li>
     </ul>
 {/block}
+
+{block footer}{/block}
