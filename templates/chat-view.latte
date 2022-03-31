@@ -5,7 +5,7 @@
         {$form??->render()}
     </div>
     <ul n:if="$chat_messages">
-        {foreach $chat_messages as $message}
+        {foreach ($chat_messages as $message)}
             <li id="item-{$iterator??->counter??}">
                 <h6>{$item??->username??}</h6>
                 <p>{$item??->message??}</p>
