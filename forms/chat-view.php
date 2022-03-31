@@ -1,6 +1,7 @@
 <?php
 
 use Nette\Forms\Form;
+
 $form = new Form;
 $form->addGroup('View Chat');
 $form->addText('id', 'Chat ID')

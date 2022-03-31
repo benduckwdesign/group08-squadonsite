@@ -6,7 +6,7 @@ $latte = new Latte\Engine;
 
 // $latte->setTempDirectory('cache/');
 
-require_once 'forms/signup.php';
+require_once 'forms/signup-screen.php';
 require_once 'config.php';
 require_once 'db/db.php';
 
