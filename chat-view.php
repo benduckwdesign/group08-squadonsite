@@ -20,9 +20,8 @@ $test_message->message = "poyo poyopoyo poyo~";
 
 $test_chat = $chat_db->get('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 $test_chat->messages = [
-    0 => $test_message
+    $test_message,
 ];
-
 $test_chat->save();
 
 $form_msg = "";
@@ -34,8 +33,7 @@ if ($form->isSuccess()) {
 	if ($chat_exists == True) {
         // Load chat if it exists
 		$form = null;
-        $chat_messages = $chat_db->get($data->id);
-        $params['chat_messages'] = $chat_messages->messages;
+        $params['chat_messages'] = $chat_db->get($data->id)->messages;
 	} else {
         // Create new chat if it doesn't?
 		$form['id']->addError('That conversation does not exist.');
