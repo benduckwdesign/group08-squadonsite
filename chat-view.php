@@ -11,11 +11,12 @@ require_once 'config.php';
 require_once 'db/db.php';
 
 $params = [
-	'siteroot' => $siteroot,
+	'siteroot' => $siteroot
 ];
 
 $form_msg = "";
 $form_result = "";
+$chat_messages = null;
 if ($form->isSuccess()) {
 	$data = $form->getValues();
 	$chat_exists = $chat_db->has($data->id);
@@ -32,6 +33,7 @@ if ($form->isSuccess()) {
 }
 $params['form_msg'] = $form_msg;
 $params['form'] = $form;
+$params['chat_messages'] = $chat_messages;
 
 $latte->render('templates/chat-view.latte', $params);
 
