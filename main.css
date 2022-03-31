@@ -93,8 +93,6 @@ input[class="button"] {
 header {
     grid-area: header;
     background-color: rgba(255, 255, 255, 0.2);
-    padding-top: 12px;
-    padding-bottom: 12px;
 }
 .app-wrapper.dark header {
     background-color: rgba(0, 0, 0, 0.2);
@@ -143,8 +141,6 @@ iframe {
 footer {
     grid-area: footer;
     background-color: rgba(255, 255, 255, 0.2);
-    padding-top: 12px;
-    padding-bottom: 12px;
 }
 p {
     font-family: 'Nunito', sans-serif;
@@ -153,6 +149,8 @@ p {
 h1 {
     text-align: center;
     font-size: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 p,h1,h2,h3,h4,h5,h6 {
     margin: 0;
