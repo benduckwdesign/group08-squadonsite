@@ -28,7 +28,7 @@ if ($form->isSuccess()) {
 }
 
 $params = [
-	'siteroot' => $siteroot,
+	'siteroot' => $ROOTURL,
 	'form' => $form,
 	'form_result' => $form_result,
 	'form_msg' => $form_msg,

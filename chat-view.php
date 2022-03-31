@@ -11,7 +11,7 @@ require_once 'config.php';
 require_once 'db/db.php';
 
 $params = [
-	'siteroot' => $siteroot
+	'siteroot' => $ROOTURL
 ];
 
 $test_message = new stdClass;

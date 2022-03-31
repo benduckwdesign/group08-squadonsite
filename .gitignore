@@ -2,3 +2,5 @@ vendor
 playground
 cache/**
 !cache/.gitkeep
+site_db/**
+!site_db/.gitkeep

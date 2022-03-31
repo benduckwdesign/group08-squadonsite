@@ -10,4 +10,8 @@ $chat_db = new \Filebase\Database([
     'dir' => 'db/chat_db'
 ]);
 
+$site_db = new \Filebase\Database([
+    'dir' => 'db/site_db'
+]);
+
 ?>

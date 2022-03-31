@@ -1,2 +1,2 @@
 php_flag display_errors 1
-php_value include_path ".:/home/students/be322473/public_html/dig4172c/new"
+php_value include_path "."
