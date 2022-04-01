@@ -29,33 +29,35 @@ $test_chat->save();
 $form_msg = "";
 $form_result = "";
 $chat_messages = null;
-$params['form_msg'] = $form_msg;
-if (isset($_SESSION['chat_id']) == False) {
-    if ($form->isSuccess()) {
-        global $params;
-        global $form;
+if ($form->isSuccess()) {
+    global $params;
+    global $form;
+    global $chat_db;
+	$data = $form->getValues();
+	$chat_exists = $chat_db->has($data->id);
+	if ($chat_exists == True) {
         global $chat_db;
-        $data = $form->getValues();
-        $chat_exists = $chat_db->has($data->id);
-        if ($chat_exists == True) {
-            global $chat_db;
-            global $params;
-            global $data;
-            global $form;
-            // Load chat if it exists
-            $form = null;
-            $chat_messages = $chat_db->get($data->id)->messages;
-            $params['chat_messages'] = $chat_messages;
-        } else {
-            global $form;
-            // Create new chat if it doesn't?
-            $form['id']->addError('That conversation does not exist.');
-        }
-    }
-    $params['form'] = $form;
+        global $params;
+        global $data;
+        global $form;
+        // Load chat if it exists
+		$form = null;
+        $chat_messages = $chat_db->get($data->id)->messages;
+	} else {
+        global $form;
+        // Create new chat if it doesn't?
+		$form['id']->addError('That conversation does not exist.');
+	}
+}
+$params['form_msg'] = $form_msg;
+
+if (isset($_SESSION['chat_id']) == False) {
+    // pass
 } else {
     global $params;
+    global $form;
     global $chat_db;
+    $form = null;
 	$chat_exists = $chat_db->has($_SESSION['chat_id']);
 	if ($chat_exists == True) {
         global $chat_db;
@@ -65,7 +67,7 @@ if (isset($_SESSION['chat_id']) == False) {
 	}
     $params['form'] = null;
 }
-
+$params['form'] = $form;
 $latte->render('templates/chat-view.latte', $params);
 
 ?>
