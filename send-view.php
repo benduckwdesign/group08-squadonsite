@@ -34,7 +34,7 @@ if (isset($_SESSION['chat_id']) == True) {
             $message = new stdClass;
             $message->username = $_SESSION['username'];
             $message->message = $data->message;
-            array_push($chat->messages, $message);
+            array_unshift($chat->messages, $message);
             $chat->save();
         } else {
             global $form;

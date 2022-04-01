@@ -6,16 +6,6 @@
 
 {block main}
     <iframe id="chat-view" src="{$siteroot}/chat-view.php" title="Chat View" allowtransparency="true"></iframe>
-    <script>
-    setInterval(function(){
-	 var obj = document.getElementById("chat-view");
-     obj.src = obj.src;
-    }, 5000);
-    setInterval(function(){
-	 var obj = document.getElementById("chat-view");
-     obj.contentDocument.body.scrollTop = obj.contentDocument.body.scrollHeight;
-     }, 5500);
-    </script>
 {/block}
 
 {block footer}
