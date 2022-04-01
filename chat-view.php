@@ -16,17 +16,19 @@ $params = [
 
 
 // Create default test chat
-$test_message = new stdClass;
-$test_message->username = "Kirby";
-$test_message->message = "poyo poyopoyo poyo~";
+if ($chat_db->has('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') == False) {
+    $test_message = new stdClass;
+    $test_message->username = "Kirby";
+    $test_message->message = "poyo poyopoyo poyo~";
 
-$test_chat = $chat_db->get('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-$test_chat->messages = array(
-    $test_message,
-    $test_message,
-    $test_message
-);
-$test_chat->save();
+    $test_chat = $chat_db->get('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+    $test_chat->messages = array(
+        $test_message,
+        $test_message,
+        $test_message
+    );
+    $test_chat->save();
+}
 //
 
 
