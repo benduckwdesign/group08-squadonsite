@@ -1,6 +1,6 @@
 <?php
 
-header("Refresh:5");
+header("Refresh:2");
 
 require_once 'vendor/autoload.php';
 
