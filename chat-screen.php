@@ -14,7 +14,7 @@ $params = [
 ];
 
 if (isset($_SESSION['username'])) {
-    if (isset($_SESSION['chat_id'])) {
+    if (isset($_SESSION['chat_id']) == True) {
     
     } else {
         $_SESSION['chat_id'] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
