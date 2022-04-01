@@ -5,9 +5,17 @@
 {/block}
 
 {block main}
-    <iframe src="{$siteroot}/chat-view.php" title="Chat View" allowtransparency="true"></iframe>
+    <iframe id="chat-view" src="{$siteroot}/chat-view.php" title="Chat View" allowtransparency="true"></iframe>
+    <script>
+    setInterval(function(){
+	 var obj = document.getElementById("chat-view");
+     obj.src = obj.src;
+     obj.contentDocument.body;
+	    obj.scrollTop = obj.scrollHeight;
+    } , 2000);
+    </script>
 {/block}
 
 {block footer}
-    <iframe src="{$siteroot}/send-view.php" title="Send Message View" allowtransparency="true"></iframe>
+    <iframe id="send-view" src="{$siteroot}/send-view.php" title="Send Message View" allowtransparency="true"></iframe>
 {/block}

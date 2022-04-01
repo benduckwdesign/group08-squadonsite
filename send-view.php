@@ -30,7 +30,12 @@ if (isset($_SESSION['chat_id']) == True) {
             global $params;
             global $data;
             global $form;
-            
+            $chat = $chat_db->get($_SESSION['chat_id']);
+            $message = new stdClass;
+            $message->username = $_SESSION['username'];
+            $message->message = $data->message;
+            array_push($chat->messages, $message);
+            $chat->save();
         } else {
             global $form;
             // Create new chat if it doesn't?
@@ -50,7 +55,12 @@ if (isset($_SESSION['chat_id']) == True) {
             global $params;
             global $data;
             global $form;
-            
+            $chat = $chat_db->get($data->id);
+            $message = new stdClass;
+            $message->username = $_SESSION['username'];
+            $message->message = $data->message;
+            array_push($chat->messages, $message);
+            $chat->save();
         } else {
             global $form;
             // Create new chat if it doesn't?
