@@ -1,5 +1,7 @@
 <?php
 
+header("Refresh:5");
+
 require_once 'vendor/autoload.php';
 
 $latte = new Latte\Engine;
