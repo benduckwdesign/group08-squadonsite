@@ -45,6 +45,7 @@ if (isset($_SESSION['chat_id']) == False) {
             // Load chat if it exists
             $form = null;
             $chat_messages = $chat_db->get($data->id)->messages;
+            $params['chat_messages'] = $chat_messages;
         } else {
             global $form;
             // Create new chat if it doesn't?
@@ -66,10 +67,10 @@ if (isset($_SESSION['chat_id']) == False) {
         // Load chat if it exists
 		$form = null;
         $chat_messages = $chat_db->get($_SESSION['chat_id'])->messages;
+        $params['chat_messages'] = $chat_messages;
 	}
     $params['form'] = $form;
 }
-$params['chat_messages'] = $chat_messages;
 
 $latte->render('templates/chat-view.latte', $params);
 
