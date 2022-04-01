@@ -57,7 +57,6 @@ if (isset($_SESSION['chat_id']) == False) {
     global $params;
     global $form;
     global $chat_db;
-	$data = $form->getValues();
 	$chat_exists = $chat_db->has($_SESSION['chat_id']);
 	if ($chat_exists == True) {
         global $chat_db;
