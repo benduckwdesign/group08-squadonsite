@@ -46,8 +46,6 @@ if (isset($_SESSION['chat_id']) == True) {
                 $user->new_message_notification = true;
                 $user->save();
             }
-
-            header("Refresh:0");
         } else {
             global $form;
             // Create new chat if it doesn't?
@@ -73,7 +71,6 @@ if (isset($_SESSION['chat_id']) == True) {
             $message->message = $data->message;
             array_push($chat->messages, $message);
             $chat->save();
-            header("Refresh:0");
         } else {
             global $form;
             // Create new chat if it doesn't?
