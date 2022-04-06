@@ -1,0 +1,40 @@
+{layout 'html.latte'}
+
+{block header}
+    <div></div>
+    <div class="vertical-center">
+        <h1>Settings</h1>
+    </div>
+    <div></div>
+{/block}
+
+{block main}
+    <div class="content-wrapper" style="user-select:none;box-sizing:border-box;" draggable="false">
+        <a class="button" style="user-select:none;" href="#" draggable="false">
+            Edit Profile
+        </a>
+        <a class="button" style="user-select:none;" href="#" draggable="false">
+            Teams
+        </a>
+        <a class="button" style="user-select:none;" href="#" draggable="false">
+            Linked Platforms
+        </a>
+        <a class="button" style="user-select:none;" href="{$siteroot}/support-screen.php" draggable="false">
+            Support
+        </a>
+    </div>
+    <div class="form-wrapper">
+        <p class="form-msg">{$form_msg}</p>
+        {$form->render()}
+        <p class="debug-msg">{$form_result}</p>
+    </div>
+    <div class="screen-wrapper" style="user-select:none;box-sizing:border-box;" draggable="false">
+        <a class="button" style="user-select:none;" href="{$siteroot}/logout-screen.php" draggable="false">
+            Log Out
+        </a>
+    </div>
+{/block}
+
+{block footer}
+    {include 'tabbar.latte'}
+{/block}

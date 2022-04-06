@@ -1,0 +1,29 @@
+{layout 'html.latte'}
+
+{block header}
+    <a href="{$siteroot}/settings-screen.php" title="Back" aria-label="Back">
+        <i class="fas fa-chevron-left fa-2x"></i>
+    </a>
+    <div class="vertical-center">
+        <h1>Support</h1>
+    </div>
+    <div></div>
+{/block}
+
+{block main}
+    <div class="screen-wrapper">
+        <a class="button" style="user-select:none;" href="#" draggable="false">
+            Report User
+        </a>
+        <a class="button" style="user-select:none;" href="{$siteroot}/about-screen.php" draggable="false">
+            About Us
+        </a>
+        <a class="button" style="user-select:none;" href="{$siteroot}/terms-screen.php" draggable="false">
+            Terms & Conditions
+        </a>
+    </div>
+{/block}
+
+{block footer}
+    {include 'tabbar.latte'}
+{/block}
