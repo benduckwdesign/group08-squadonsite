@@ -21,6 +21,7 @@
 
             success: function(data){
                 window.location.href = window.location.href + '';
+                window.location.reload();
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
                 console.log(textStatus + " (" + errorThrown + ")");
