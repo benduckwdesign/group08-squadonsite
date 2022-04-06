@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
         header("HTTP/1.0 404 Not Found");
         die();
     }
-    $refresh == ($user_data->new_message_notification);
+    $refresh = ($user_data->new_message_notification);
     if ($refresh == true) {
         $user_data->new_message_notification = false;
         $user_data->save();
