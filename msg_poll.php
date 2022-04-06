@@ -4,7 +4,7 @@ require_once 'config.php';
 require_once 'db/db.php';
 
 if (isset($_SESSION['username'])) {
-    $user_data = $user_db[$_SESSION['username']];
+    $user_data = $user_db->get($_SESSION['username']);
     if ($user_data->has('new_message_notification') == true) {
         // pass
     } else {
