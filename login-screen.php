@@ -31,6 +31,8 @@ if (isset($_SESSION['username'])) {
             if ($user->password == $data->password) {
                 $form_msg = 'You have been logged in as '.$data->username.'.';
                 $_SESSION['username'] = $data->username;
+                header("Location: $ROOTURL/settings-screen.php");
+                die();
             } else {
                 $form['username']->addError('The username or password was incorrect.');
                 $form['password']->addError('The username or password was incorrect.');
