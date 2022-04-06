@@ -10,12 +10,14 @@ if (isset($_SESSION['username'])) {
     } else {
         $user_data->new_message_notification = false;
         $user_data->save();
+        header("HTTP/1.0 404 Not Found");
+        die();
     }
     $refresh == ($user_data->new_message_notification);
     if ($refresh == true) {
-        echo "New message.";
         $user_data->new_message_notification = false;
         $user_data->save();
+        echo "New message.";
     } else {
         header("HTTP/1.0 404 Not Found");
         die();
