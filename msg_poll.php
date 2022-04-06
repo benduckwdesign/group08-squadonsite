@@ -5,7 +5,7 @@ require_once 'db/db.php';
 
 if (isset($_SESSION['username'])) {
     $user_data = $user_db->get($_SESSION['username']);
-    if ($user_data->has('new_message_notification') == true) {
+    if (!empty($user_data->new_message_notification)) {
         // pass
     } else {
         $user_data->new_message_notification = false;
