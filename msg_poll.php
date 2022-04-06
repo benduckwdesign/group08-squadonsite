@@ -5,6 +5,12 @@ require_once 'db/db.php';
 
 if (isset($_SESSION['username'])) {
     $user_data = $user_db[$_SESSION['username']];
+    if ($user_data->has('new_message_notification') == true) {
+        // pass
+    } else {
+        $user_data->new_message_notification = false;
+        $user_data->save();
+    }
     $refresh == ($user_data->new_message_notification);
     if ($refresh == true) {
         echo "New message.";
