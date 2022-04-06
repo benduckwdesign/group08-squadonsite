@@ -20,8 +20,7 @@
             timeout:50000,
 
             success: function(data){
-                window.location.reload();
-                location.reload();
+                console.log(data);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
                 console.log(textStatus + " (" + errorThrown + ")");
