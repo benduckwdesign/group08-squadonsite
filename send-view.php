@@ -23,6 +23,7 @@ if (isset($_SESSION['chat_id']) == True) {
         global $params;
         global $form;
         global $chat_db;
+        global $user_db;
         $data = $form->getValues();
         $chat_exists = $chat_db->has($_SESSION['chat_id']);
         if ($chat_exists == True) {
@@ -30,12 +31,22 @@ if (isset($_SESSION['chat_id']) == True) {
             global $params;
             global $data;
             global $form;
+            global $user_db;
             $chat = $chat_db->get($_SESSION['chat_id']);
             $message = new stdClass;
             $message->username = $_SESSION['username'];
             $message->message = $data->message;
             array_unshift($chat->messages, $message);
             $chat->save();
+            
+            // alert each user in the conversation
+            // for now default to all users
+            $results = $user_db->findAll();
+            foreach ($results as $user) {
+                $user->new_message_notification = true;
+                $user->save();
+            }
+
             header("Refresh:0");
         } else {
             global $form;

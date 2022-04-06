@@ -4,10 +4,43 @@
         <title>Squad On Site</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <link rel="stylesheet" type="text/css" href="{$siteroot}/main.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
         </style>
+        <script type="text/javascript" charset="utf-8">
+    function waitForMsg(){
+        $.ajax({
+            type: "GET",
+            url: "{$siteroot}/msg_poll.php",
+
+            async: true,
+            cache: false,
+            timeout:50000,
+
+            success: function(data){
+                window.location.reload();
+                location.reload();
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                console.log(textStatus + " (" + errorThrown + ")");
+                setTimeout(
+                    waitForMsg,
+                    15000);
+            }
+        });
+    };
+
+    $(document).ready(function(){
+        setTimeout(
+            function {
+                waitForMsg();
+            }
+            , 1000
+        )
+    });
+    </script>
     </head>
     <body>
         <div class="app-wrapper dark">
