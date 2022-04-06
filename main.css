@@ -124,6 +124,9 @@ header a {
     padding: 10px 20px 10px 20px;
     text-align:center;
 }
+fieldset {
+    margin-bottom: 12px;
+}
 .vertical-center {
     display:flex;
     align-items:center;

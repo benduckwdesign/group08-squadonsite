@@ -22,6 +22,8 @@ if (isset($_SESSION['username'])) {
 }
 
 $params['form'] = $form;
+$params['form_msg'] = '';
+$params['form_result'] = '';
 
 $latte->render('templates/settings-screen.latte', $params);
 
