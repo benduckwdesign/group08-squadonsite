@@ -81,6 +81,6 @@ if (isset($_SESSION['chat_id']) == True) {
 }
 $params['form'] = $form;
 
-$latte->render('templates/chat-view.latte', $params);
+$latte->render('templates/send-view.latte', $params);
 
 ?>
