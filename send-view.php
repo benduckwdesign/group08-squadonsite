@@ -47,10 +47,12 @@ if (isset($_SESSION['chat_id']) == True) {
             
             // alert each user in the conversation
             // for now default to all users
-            $results = $user_db->findAll();
-            foreach ($results as $user) {
-                $user->new_message_notification = true;
-                $user->save();
+            if ($_SESSION['chat_id'] == "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa") {
+                $results = $user_db->findAll();
+                foreach ($results as $user) {
+                    $user->new_message_notification = true;
+                    $user->save();
+                }
             }
         } else {
             global $form;
