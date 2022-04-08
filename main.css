@@ -5,6 +5,7 @@
     --tan: #DCDAC7;
     --dark-tan: #C8C6B5;
     --red: #D0725D;
+    --dark-blue: #d4f3ec;
 }
 html {
     background-color: var(--blue); /* sets scrollbar color in firefox */
@@ -166,6 +167,7 @@ select {
 .form-msg {
     margin-bottom: 12px;
     text-align: center;
+    color: var(--dark-blue);
 }
 .form-checkbox {
     margin-bottom: 12px;
@@ -290,7 +292,7 @@ div.content-wrapper {
 }
 .news-img-1 {
     background-image: url("https://descontoemgames.com/wp-content/uploads/2021/09/Kirby-and-the-Forgotten-Land-1536x864.jpg");
-    background-position:bottom;
+    background-position:center;
 }
 .news-img-2 {
     background-image: url("https://cdn.mos.cms.futurecdn.net/CknA879W5bFP2CRSbJKnch-970-80.jpg.webp");

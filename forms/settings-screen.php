@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 use Nette\Forms\Form;
 
 $form = new Form;
@@ -25,17 +23,13 @@ $form->addSelect("language", "Language", ["English"])
 
 $form->addGroup("Account");
 $form->addEmail("email", "Recovery Email");
-if (isset($_SESSION['username'])) {
-    // pass
-} else {
-    header("Location: $ROOTURL/login-screen.php");
-    die();
-}
 $form->addText("username", "Username")
-    ->setValue($_SESSION['username'])->setHtmlAttribute('readonly', true);
+    ->setDefaultValue($_SESSION['username'])->setHtmlAttribute('readonly', true);
+$form->addPassword("new_password", "New Password");
+
+$form->addGroup("Save Changes");
 $form->addPassword("password", "Current Password")
     ->setRequired(true);
-$form->addPassword("new_password", "New Password");
 $form->addSubmit('send', 'Save');
 $form->setAction('settings-screen.php');
 
