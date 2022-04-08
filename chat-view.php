@@ -4,13 +4,17 @@
 
 require_once 'vendor/autoload.php';
 
-$latte = new Latte\Engine;
-
-// $latte->setTempDirectory('cache/');
-
-// require_once 'forms/chat-view.php';
 require_once 'config.php';
 require_once 'db/db.php';
+
+$latte = new Latte\Engine;
+// $latte->setTempDirectory('cache/');
+// require_once 'forms/chat-view.php';
+
+if (!isset($_SESSION['username'])) { // Die if not logged in
+    global $ROOTURL;
+    die();
+}
 
 $params = [
 	'siteroot' => $ROOTURL

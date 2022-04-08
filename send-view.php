@@ -2,13 +2,19 @@
 
 require_once 'vendor/autoload.php';
 
+require_once 'config.php';
+require_once 'db/db.php';
+
+if (!isset($_SESSION['username'])) { // Die if not logged in
+    global $ROOTURL;
+    die();
+}
+
 $latte = new Latte\Engine;
 
 // $latte->setTempDirectory('cache/');
 
 require_once 'forms/send-view.php';
-require_once 'config.php';
-require_once 'db/db.php';
 
 $params = [
 	'siteroot' => $ROOTURL
