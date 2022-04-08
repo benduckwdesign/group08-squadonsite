@@ -1,16 +1,12 @@
-{layout 'refreshing_html.latte'}
-
-{block header}{/block}
+{layout 'html-chat-view.latte'}
 
 {block main}
-    <ul n:if="!empty($chat_messages)">
+    <ul n:if="!empty($chat_messages)" tabindex="0">
     {foreach $chat_messages as $item}
         <li>
-            <h6>{$item['username']}</h6>
+            <p><b>{$item['username']}</b></p>
             <p>{$item['message']}</p>
         </li>
     {/foreach}
     </ul>
 {/block}
-
-{block footer}{/block}

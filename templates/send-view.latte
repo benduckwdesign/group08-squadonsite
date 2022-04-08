@@ -1,11 +1,7 @@
-{layout 'html.latte'}
-
-{block header}{/block}
+{layout 'html-send-view.latte'}
 
 {block main}
     <div n:if="$form" class="form-wrapper-condensed">
         {$form??->render()}
     </div>
 {/block}
-
-{block footer}{/block}

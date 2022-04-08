@@ -120,7 +120,7 @@ a.button {
 header {
     grid-area: header;
     display: grid;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0);
     grid-template-columns: minmax(65px,auto) 1fr minmax(65px,auto);
     grid-template-rows: 1fr;
 }
@@ -150,6 +150,35 @@ header a:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 main {
+    grid-area: main;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+:focus {
+    outline: white solid 4px !important;
+}
+:focus-visible {
+    outline: white solid 4px !important;
+}
+*:focus {
+    outline: white solid 4px !important;
+}
+*:focus-visible {
+    outline: white solid 4px !important;
+}
+iframe:focus {
+    outline: white solid 4px !important;
+}
+iframe:focus-visible {
+    outline: white solid 4px !important;
+}
+html:focus {
+    outline: white solid 4px !important;
+}
+html:focus-visible {
+    outline: white solid 4px !important;
+}
+div.main {
     grid-area: main;
     overflow-x: hidden;
     overflow-y: auto;
@@ -279,6 +308,9 @@ div.content-wrapper {
     padding-bottom:6px;
     padding-left:12px;
     padding-right:12px;
+}
+.selected {
+    border: #fff 3px solid;
 }
 .card-img {
     width:auto;
