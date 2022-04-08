@@ -160,24 +160,6 @@ main {
 :focus-visible {
     outline: white solid 4px !important;
 }
-*:focus {
-    outline: white solid 4px !important;
-}
-*:focus-visible {
-    outline: white solid 4px !important;
-}
-iframe:focus {
-    outline: white solid 4px !important;
-}
-iframe:focus-visible {
-    outline: white solid 4px !important;
-}
-html:focus {
-    outline: white solid 4px !important;
-}
-html:focus-visible {
-    outline: white solid 4px !important;
-}
 div.main {
     grid-area: main;
     overflow-x: hidden;
