@@ -33,6 +33,13 @@ body {
         "main"
         "footer";
 }
+/* Avoid Chrome to see Safari hack */
+@supports (-webkit-touch-callout: none) {
+    .app-wrapper {
+      /* The hack for Safari */
+      height: -webkit-fill-available;
+    }
+}
 .app-wrapper.dark {
     background-color: var(--black);
     color: var(--white);
