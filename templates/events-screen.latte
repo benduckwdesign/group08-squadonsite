@@ -1,0 +1,24 @@
+{layout 'html.latte'}
+
+{block header}
+    <div></div>
+    <div class="vertical-center">
+        <h1>Events</h1>
+    </div>
+    <div></div>
+{/block}
+
+{block main}
+    <ul n:if="!empty($events)" tabindex="0">
+    {foreach $events as $item}
+        <li>
+            <p><b>{$item['name']}</b> with <b>{$item['team']}</b></p>
+            <p>{$item['days away']} @ {$item['time']}</p>
+        </li>
+    {/foreach}
+    </ul>
+{/block}
+
+{block footer}
+    {include 'tabbar.latte'}
+{/block}

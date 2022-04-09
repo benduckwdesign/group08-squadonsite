@@ -23,8 +23,6 @@ $params = [
     'form_result' => '',
 ];
 
-$params['form'] = $form;
-
 if ($form->isSuccess()) {
     global $params;
     global $form;
@@ -41,6 +39,8 @@ if ($form->isSuccess()) {
     $user_data->save();
     $params['form_msg'] = "Your accounts have been updated successfully.";
 }
+
+$params['form'] = $form;
 
 $latte->render('templates/linked-platforms-screen.latte', $params);
 

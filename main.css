@@ -120,7 +120,7 @@ a.button {
 header {
     grid-area: header;
     display: grid;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
     grid-template-columns: minmax(65px,auto) 1fr minmax(65px,auto);
     grid-template-rows: 1fr;
 }
@@ -147,7 +147,7 @@ header a:hover {
     background-color: var(--blue);
 }
 .app-wrapper.dark header {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 main {
     grid-area: main;
@@ -222,11 +222,11 @@ span.error {
     content: '';
 }
 .app-wrapper.dark footer {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 footer {
     grid-area: footer;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 p {
     font-family: 'Nunito', sans-serif;
@@ -237,6 +237,9 @@ h1 {
     font-size: calc(28px + 0.5vw);
     padding-top: 12px;
     padding-bottom: 12px;
+}
+code {
+    font-size: calc(10px + 0.5vw);
 }
 h2 {
     padding-top: 12px;

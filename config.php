@@ -30,6 +30,12 @@ if(__FILE__ != $_SERVER['SCRIPT_FILENAME']) {
         $any_failure = True;
         echo "Please make sure db/user_db is writable for PHP. You can chmod this directory to set write permissions.";
     }
+    $team_db_writable = is_writable('db/team_db');
+    if ($team_db_writable == False) {
+        global $any_failure;
+        $any_failure = True;
+        echo "Please make sure db/team_db is writable for PHP. You can chmod this directory to set write permissions.";
+    }
 
     require_once 'db/db.php';
 
@@ -59,6 +65,12 @@ if(__FILE__ != $_SERVER['SCRIPT_FILENAME']) {
         global $any_failure;
         $any_failure = True;
         echo "Please make sure db/user_db is writable for PHP. You can chmod this directory to set write permissions.";
+    }
+    $team_db_writable = chmod('db/team_db', 0777) || is_writable('db/team_db');
+    if ($team_db_writable == False) {
+        global $any_failure;
+        $any_failure = True;
+        echo "Please make sure db/team_db is writable for PHP. You can chmod this directory to set write permissions.";
     }
 
     require_once 'db/db.php';

@@ -1,0 +1,33 @@
+{layout 'html.latte'}
+
+{block header}
+    <a href="{$siteroot}/settings-screen.php" title="Back" aria-label="Back">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <div class="vertical-center">
+        <h1>Teams</h1>
+    </div>
+    <a href="{$siteroot}/add-team-screen.php" title="Add Team" aria-label="Add Team">
+        <i class="fas fa-plus"></i>
+    </a>
+{/block}
+
+{block main}
+    <ul n:if="!empty($teams)" tabindex="0">
+    {foreach $teams as $item}
+        <li>
+            <p><b>{$item['name']}</b></p>
+            <p>Owner: <b>{$item['owner']}</b></p>
+            <p>{count($item['members'])} member(s)</p>
+            <code n:if="$item['owner']==$_SESSION['username']">Invite ID: {$item['id']}</code>
+        </li>
+    {/foreach}
+    </ul>
+    <a class="button" style="user-select:none;" href="{$siteroot}/leave-team-screen.php" draggable="false">
+        Leave Team
+    </a>
+{/block}
+
+{block footer}
+    {include 'tabbar.latte'}
+{/block}

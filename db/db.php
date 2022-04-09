@@ -28,6 +28,10 @@ $site_db = new \Filebase\Database([
     'dir' => 'db/site_db'
 ]);
 
+$team_db = new \Filebase\Database([
+    'dir' => 'db/team_db'
+]);
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
