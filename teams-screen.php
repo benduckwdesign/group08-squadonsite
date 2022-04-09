@@ -1,5 +1,9 @@
 <?php
 
+$already_submitted = false;
+
+start:
+
 require_once 'vendor/autoload.php';
 
 require_once 'config.php';
@@ -11,7 +15,9 @@ if (!isset($_SESSION['username'])) { // Redirect if not logged in
     die();
 }
 
+
 $latte = new Latte\Engine;
+require 'forms/teams-screen.php';
 
 // $latte->setTempDirectory('cache/');
 
@@ -22,7 +28,10 @@ if (is_null($user_data->teams)) {
     $user_data->save();
 }
 
-$params = [];
+$params = [
+    'form_msg' => '',
+    'form_result' => ''
+];
 
 $params['teams'] = [];
 
@@ -47,6 +56,49 @@ if (!empty($user_data->teams)) {
         }
     }
 }
+
+if ($form->isSuccess() && $already_submitted == false) {
+    global $params;
+    global $form;
+    global $user_db;
+    $data = $form->getValues();
+    $user_data = $user_db->get($_SESSION['username']);
+    if ($form['leave']->isSubmittedBy()) {
+
+        if (!is_null($data->leave_team_select)) {
+            // remove team from user list
+            $team_to_leave_id = $params['teams'][$data->leave_team_select]['id'];
+            $needle = array_search($team_to_leave_id, $user_data->teams);
+            unset($user_data->teams[$needle]);
+            $user_data->save();
+
+            // remove user from team members
+            if ($team_db->has($team_to_leave_id)) {
+                $team = $team_db->get($team_to_leave_id);
+                $needle = array_search($_SESSION['username'], $team->members);
+                unset($team->members[$needle]);
+                $team->save();
+            }
+
+            $already_submitted = true;
+
+            goto start;
+        }
+    }
+    if ($form['transfer']->isSubmittedBy()) {
+
+        if (!is_null($data->transfer_team_select)) {
+            
+            // transfer ownership to new user
+
+            $already_submitted = true;
+
+            goto start;
+        }
+    }
+}
+
+$params['form'] = $form;
 
 $params['siteroot'] = $ROOTURL;
 

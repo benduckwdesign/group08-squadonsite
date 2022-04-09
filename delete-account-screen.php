@@ -39,6 +39,7 @@ if ($form->isSuccess()) {
         
         // Easiest way to delete for now is just to lock the user out permanently
         $user_data->password = (Uuid::uuid4())->toString().(Uuid::uuid4())->toString().(Uuid::uuid4())->toString();
+        // wipe email so they can't recover
         $user_data->email = "";
         $user_data->save();
 

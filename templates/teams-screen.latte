@@ -23,9 +23,11 @@
         </li>
     {/foreach}
     </ul>
-    <a class="button" style="user-select:none;" href="{$siteroot}/leave-team-screen.php" draggable="false">
-        Leave Team
-    </a>
+    <div class="form-wrapper">
+        <p class="form-msg">{$form_msg}</p>
+        {$form->render()}
+        <p class="debug-msg">{$form_result}</p>
+    <div>
 {/block}
 
 {block footer}
