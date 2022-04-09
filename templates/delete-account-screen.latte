@@ -1,0 +1,26 @@
+{layout 'html.latte'}
+
+{block header}
+    <a href="{$siteroot}/support-screen.php" title="Back" aria-label="Back">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <div class="vertical-center">
+        <h1>Delete Account</h1>
+    </div>
+    <div></div>
+{/block}
+
+{block main}
+    <div class="screen-wrapper">
+        <div class="form-wrapper">
+            <p class="form-msg">{$form_msg}</p>
+            {$form->render()}
+            <p class="debug-msg">{$form_result}</p>
+        <div>
+        <p class="centered-textblock">Your account will be deleted immediately if you submit this form. You will no longer have access to your account.</p>
+    </div>
+{/block}
+
+{block footer}
+    {include 'tabbar.latte'}
+{/block}
