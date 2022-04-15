@@ -79,6 +79,7 @@ if (isset($_SESSION['chat_id']) == True) {
             $message->message = $data->message;
             array_push($chat->messages, $message);
             $chat->save();
+            global $form;
             $form->reset();
         } else {
             global $form;
