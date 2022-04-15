@@ -8,7 +8,9 @@ $form->addText('message', 'Message')
     ->addRule($form::MAX_LENGTH, 'Message must be at less than %d characters.', 2000)
     ->setHtmlAttribute('placeholder', "Message...")
     ->setRequired('Please write a message.')
-    ->setDefaultValue('');
+    ->setDefaultValue('')
+    ->setHtmlAttribute('value', '')
+    ->setHtmlAttribute('autocomplete','off');
 $form->addSubmit('send', 'Send');
 $form->setAction('send-view.php');
 

@@ -79,9 +79,6 @@ if (isset($_SESSION['chat_id']) == True) {
             $message->message = $data->message;
             array_push($chat->messages, $message);
             $chat->save();
-
-            // clear message after send
-            $form['message']->setValue("");
         } else {
             global $form;
             // Create new chat if it doesn't?
