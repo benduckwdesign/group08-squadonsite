@@ -89,7 +89,12 @@ if ($form->isSuccess() && $already_submitted == false) {
 
         if (!is_null($data->transfer_team_select)) {
             
-            // transfer ownership to new user
+            $team_to_transfer_id = $params['teams'][$data->transfer_team_select]['id'];
+            $needle = array_search($team_to_transfer_id, $user_data->teams);
+            $user_data->teams[$needle]->owner = $data->new_owner;
+            $user_data->save();
+
+            // TODO: verification that user exists
 
             $already_submitted = true;
 

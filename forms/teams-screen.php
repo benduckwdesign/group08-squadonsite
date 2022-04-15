@@ -60,7 +60,12 @@ $form->addSubmit('leave', 'Leave');
 
 $form->addGroup("Transfer Ownership");
 $form->addSelect('transfer_team_select', 'Team', $team_displays_owned);
-$form->addText('new_owner', 'New Owner');
+$form->addText('new_owner', 'New Owner')
+    ->addFilter(function ($value) {
+        return str_replace(' ', '', $value); // remove spaces from the username
+    })
+    ->addRule($form::PATTERN, 'Username must contain letters and numbers only.', '[a-zA-Z0-9]+')
+    ->addRule($form::MAX_LENGTH, 'Username must be at less than %d characters.', 32);
 $form->addSubmit('transfer', 'Transfer');
 
 $form->setAction('teams-screen.php');
