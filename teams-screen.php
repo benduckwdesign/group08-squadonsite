@@ -91,7 +91,7 @@ if ($form->isSuccess() && $already_submitted == false) {
             
             $team_to_transfer_id = $params['teams'][$data->transfer_team_select]['id'];
             $needle = array_search($team_to_transfer_id, $user_data->teams);
-            $user_data->teams[$needle]->owner = $data->new_owner;
+            $user_data->teams[$needle]["owner"] = $data->new_owner;
             $user_data->save();
 
             // TODO: verification that user exists
