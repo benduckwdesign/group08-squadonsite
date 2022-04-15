@@ -90,11 +90,29 @@ if ($form->isSuccess() && $already_submitted == false) {
         if (!is_null($data->transfer_team_select)) {
             
             $team_to_transfer_id = $params['teams'][$data->transfer_team_select]['id'];
-            $needle = array_search($team_to_transfer_id, $user_data->teams);
-            $user_data->teams[$needle]["owner"] = $data->new_owner;
-            $user_data->save();
 
-            // TODO: verification that user exists
+            if ($user_db->has($data->new_owner)) {
+
+            global $user_data;
+            global $team_db;
+            global $params;
+            $teams = $user_data->teams;
+            if ($team_db->has($team_to_transfer_id)) {
+                $team = $team_db->get($team_to_transfer_id);
+
+                if ($team->owner == $_SESSION['username']) {
+                    $team->owner = $data->new_owner;
+                    $team->save();
+                } else {
+                    $form['transfer_team_select']->addError("You are not the owner of that team, so you cannot transfer its ownership.");
+                }
+            }
+
+            } else {
+
+                $form['new_owner']->addError("That user does not exist.");
+
+            }
 
             $already_submitted = true;
 
