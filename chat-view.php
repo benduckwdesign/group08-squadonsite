@@ -24,13 +24,11 @@ $params = [
 // Create default test chat
 if ($chat_db->has('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') == False) {
     $test_message = new stdClass;
-    $test_message->username = "Kirby";
-    $test_message->message = "poyo poyopoyo poyo~";
+    $test_message->username = "Squad On Site";
+    $test_message->message = "A new conversation has been created. Enjoy!";
 
     $test_chat = $chat_db->get('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
     $test_chat->messages = array(
-        $test_message,
-        $test_message,
         $test_message
     );
     $test_chat->save();
