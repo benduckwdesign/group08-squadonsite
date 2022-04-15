@@ -80,7 +80,11 @@ if (isset($_SESSION['chat_id']) == True) {
             array_push($chat->messages, $message);
             $chat->save();
             global $form;
-            $form->reset();
+            foreach ($form->getControls() as $control) {
+                if ($control->getOption('type') == 'text') {
+                    $control->setValue("");
+                }
+            }
         } else {
             global $form;
             // Create new chat if it doesn't?
