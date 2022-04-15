@@ -9,10 +9,12 @@
 {/block}
 
 {block main}
-    <h2>Today</h2>
-    <p class="centered-textblock">There are no events right now.</p>
-    <h2>Upcoming</h2>
-    <p class="centered-textblock">There are no upcoming events.</p>
+    <div class="screen-wrapper">
+        <h2>Today</h2>
+        <p class="centered-textblock">There are no events right now.</p>
+        <h2>Upcoming</h2>
+        <p class="centered-textblock">There are no upcoming events.</p>
+    </div>
     <ul n:if="!empty($events)" tabindex="0">
     {foreach $events as $item}
         <li>
